@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "./components/header";
+import Main from "./components/main";
 
-const App = ()=> < Header/>;
+import './app.css';
+const App = () => ([<Header/>, <Main/>]
+);
 
 export default App;
