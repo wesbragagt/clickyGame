@@ -1,4 +1,4 @@
-.container {
+main #game-img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1rem;
@@ -7,9 +7,16 @@
     grid-row-gap: 1rem;
 }
 
+/* MOBILE */
 @media only screen and (max-width: 600px) {
     div .jumbotron-fluid h1, p {
         font-size: 2rem;
     }
     
+  }
+/*  DESKTOP */
+  @media only screen and (min-width: 1200px){
+    main .container {
+        max-width: 748px;
+      }
   }
