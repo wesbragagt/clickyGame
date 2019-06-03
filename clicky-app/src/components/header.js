@@ -10,7 +10,7 @@ const header = () => (
             </ul>
         </nav>
         
-        <div className="jumbotron-fluid text-center p-5 clearfix">
+        <div className="jumbotron-fluid text-center p-2 clearfix">
             <h1 className="display-3">Clicky Game</h1>
             <p className="lead">
                 A game where you are not suppose to click on the same character

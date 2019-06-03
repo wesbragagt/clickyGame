@@ -1,12 +1,12 @@
 import React from "react";
-import Pokemon from "./pokemonsList";
+import PokemonList from "./pokemonsList";
 // JSON file with a list of pokemons
 import pokemon from "./json/pokemons.json";
 
-const main = () => (
+const Main = () => (
     <main>
-        <Pokemon pokemons={pokemon} />
+        <PokemonList pokemons={pokemon} />
     </main>
 );
 
-export default main;
+export default Main;
