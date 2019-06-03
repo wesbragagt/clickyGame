@@ -1,6 +1,6 @@
 import React from "react";
 
-const header = () => (
+const Header = () => (
     <header>
         <nav className="navbar purple darken-3 text-success sticky-top">
             <ul className="container text-center">
@@ -19,4 +19,4 @@ const header = () => (
     </header>
 );
 
-export default header;
+export default Header;
