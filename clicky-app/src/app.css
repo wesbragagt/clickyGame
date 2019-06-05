@@ -48,14 +48,29 @@
 
 /* MOBILE */
 @media only screen and (max-width: 600px) {
-    div .jumbotron-fluid h1,
-    p {
-        font-size: 2rem;
+    #game-img {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: .1rem;
+    }
+
+    ul li{
+        font-size: .8rem;
+    }
+
+    .card {
+        padding: 0;
+    }
+    .jumbotron-fluid h1{
+        font-size: 1rem;
+    }
+    .jumbotron-fluid .lead {
+        font-size: .8rem;
     }
 }
 /*  DESKTOP */
 @media only screen and (min-width: 601px) {
-    main .container {
+    .container {
         max-width: 748px;
     }
 }
