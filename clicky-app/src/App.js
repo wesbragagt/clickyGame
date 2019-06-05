@@ -9,7 +9,8 @@ import "./app.css";
 class App extends React.Component {
     state = {
         pokemonArr: pokemonList,
-        previewsClick: ""
+        previewsClick: "",
+        score: 0
     };
 
     // shuffling method
@@ -33,18 +34,24 @@ class App extends React.Component {
     }
 
     // LOGIC FOR HANDLING CLICKS ON A PARTICULAR ELEMENT
-    handleClick = (event) => {
+    handleClick = event => {
         event.preventDefault();
-        
-        console.log(event.target.alt);
-        const newPokemonArr = this.shuffleArr(this.state.pokemonArr);
-        this.setState({
-            pokemonArr: newPokemonArr
-        });
-    }
+        const { alt } = event.target;
+        const currentClick = alt;
+        console.log("you clicked on", alt);
+
+        if (currentClick !== this.state.previewsClick) {
+            const newPokemonArr = this.shuffleArr(this.state.pokemonArr);
+            this.setState({
+                pokemonArr: newPokemonArr,
+                previewsClick: currentClick,
+                score: this.state.score + 1
+            });
+        }
+    };
     render() {
         return [
-            <Header />,
+            <Header score={this.state.score} />,
 
             <main id="game-img" className="container">
                 {this.state.pokemonArr.map((pokemon, index) => (
@@ -54,7 +61,7 @@ class App extends React.Component {
                         src={pokemon.img}
                         name={pokemon.name}
                         img={pokemon.img}
-                        handleClick = {this.handleClick}
+                        handleClick={this.handleClick}
                     />
                 ))}
             </main>

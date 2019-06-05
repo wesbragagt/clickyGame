@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Header() {
+export default function Header(props) {
     return (
         <header>
             <nav className="navbar purple darken-3 text-success sticky-top">
                 <ul className="container text-center">
                     <li className="nav-link">Clicky Game</li>
                     <li className="nav-link">Click an Image to begin</li>
-                    <li className="nav-link">Score: 0 | Top Score: 0</li>
+                    <li className="nav-link">Score: {props.score} | Top Score: 0</li>
                 </ul>
             </nav>
 
