@@ -7,7 +7,7 @@ export default function Header(props) {
                 <ul className="container text-center">
                     <li className="nav-link">Clicky Game</li>
                     <li className="nav-link">Click an Image to begin</li>
-                    <li className="nav-link">Score: {props.score} | Top Score: 0</li>
+                    <li className="nav-link">Score: {props.score} | Top Score: {props.topScore}</li>
                 </ul>
             </nav>
 

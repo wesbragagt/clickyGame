@@ -10,7 +10,8 @@ class App extends React.Component {
     state = {
         pokemonArr: pokemonList,
         previewsClick: "",
-        score: 0
+        score: 0,
+        topScore: 0
     };
 
     // shuffling method
@@ -48,10 +49,22 @@ class App extends React.Component {
                 score: this.state.score + 1
             });
         }
+
+        else{
+            const saveScore = this.state.score;
+            const newPokemonArr = this.shuffleArr(this.state.pokemonArr);
+            this.setState({
+                pokemonArr: newPokemonArr,
+                previewsClick: currentClick,
+                score: 0,
+                topScore: saveScore
+
+            });
+        }
     };
     render() {
         return [
-            <Header score={this.state.score} />,
+            <Header score={this.state.score} topScore = {this.state.topScore} />,
 
             <main id="game-img" className="container">
                 {this.state.pokemonArr.map((pokemon, index) => (
