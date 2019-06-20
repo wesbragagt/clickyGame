@@ -71,22 +71,27 @@ class App extends React.Component {
             // if current score is greater than top score, store that current score to top score
             if (saveScore > this.state.topScore) {
                 this.setState({
-                    pokemonArr: newPokemonArr,
-                    previewsClick: currentClick,
-                    score: 0,
-                    topScore: saveScore,
-                    wrongClick: true,
-                    message: "oooh no, you can do better than this"
+                    topScore: saveScore
                 });
             }
             // else just reset the current score and keep playing the game
-            this.setState({
+            this.setState(currentState => ({
                 pokemonArr: newPokemonArr,
                 previewsClick: currentClick,
                 score: 0,
-                wrongClick: true,
+                wrongClick: !currentState.wrongClick,
                 message: "oooh no, you can do better than this"
-            });
+            }));
+
+            // this.setState(currentState => ({
+            //     wrongClick: !currentState.wrongClick
+            // }));
+
+            setTimeout(() => {
+                this.setState({
+                    wrongClick: false
+                });
+            }, 200);
         }
     };
     render() {
